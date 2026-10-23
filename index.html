@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Details</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202124;
+    background: #f1f3f4;
+}
+
+.top-browser {
+    height: 150px;
+    background: #202124;
+    color: white;
+    padding: 18px 28px;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.browser-title {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.browser-title .site-name {
+    font-size: 23px;
+}
+
+.browser-title small {
+    display: block;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.browser-icons {
+    margin-left: auto;
+    font-size: 25px;
+}
+
+.app-header {
+    background: white;
+    height: 98px;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    gap: 22px;
+    box-shadow: 0 2px 5px #0002;
+    font-size: 27px;
+}
+
+.menu-icon {
+    font-size: 30px;
+}
+
+.notification {
+    margin-left: auto;
+    background: #e1f3ff;
+    color: #176b91;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    background: #fff;
+    padding: 30px 27px 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+select,
+input {
+    width: 100%;
+    height: 78px;
+    padding: 0 26px;
+    border: 1px solid #b8b8b8;
+    border-radius: 6px;
+    font-size: 22px;
+    color: #3c4043;
+    background: #fff;
+    outline-color: #1a73e8;
+}
+
+select {
+    margin-bottom: 38px;
+}
+
+.field-title {
+    font-size: 23px;
+    margin: 0 0 42px;
+}
+
+.description {
+    font-size: 23px;
+    line-height: 1.5;
+    margin: 0 0 40px;
+}
+
+input {
+    margin-bottom: 8px;
+}
+
+.helper {
+    display: block;
+    color: #777;
+    font-size: 18px;
+    margin-bottom: 42px;
+}
+
+.error-input {
+    border-color: #bd625b;
+    color: #b6534b;
+}
+
+.error-message {
+    color: #b6534b;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+}
+
+.verify-text {
+    font-size: 22px;
+    line-height: 1.55;
+    margin: 15px 0 30px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin: 30px 0 58px;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    background: transparent;
+}
+
+button:disabled {
+    color: #c5c5c5;
+    cursor: not-allowed;
+}
+
+.learn-more {
+    color: #444;
+}
+
+.section-title {
+    font-size: 23px;
+    margin-bottom: 0;
+}
+
+.bottom-actions {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 25px 27px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 -2px 5px #0001;
+}
+
+.discard {
+    color: #444;
+}
+
+.save {
+    background: #0b57d0;
+    color: white;
+    border-radius: 40px;
+    padding: 20px 40px;
+}
+
+.account-warning {
+    background: #08719f;
+    color: white;
+    padding: 22px 40px 30px;
+    font-size: 21px;
+    line-height: 1.6;
+}
+
+.account-warning a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 24px;
+}
+
+@media (min-width: 901px) {
+    body {
+        background: #f8f9fa;
+    }
+
+    .top-browser {
+        display: none;
+    }
+
+    .app-header {
+        height: 80px;
+        font-size: 23px;
+    }
+
+    main {
+        margin-top: 20px;
+        border-radius: 8px;
+    }
+
+    .bottom-actions,
+    .account-warning {
+        max-width: 900px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-browser {
+        height: 120px;
+        padding: 14px 18px;
+    }
+
+    .status-bar {
+        margin-bottom: 22px;
+        font-size: 14px;
+    }
+
+    .browser-title .site-name {
+        font-size: 18px;
+    }
+
+    .browser-title small {
+        font-size: 13px;
+    }
+
+    .app-header {
+        height: 75px;
+        padding: 0 18px;
+        font-size: 22px;
+    }
+
+    main {
+        padding: 25px 18px 35px;
+    }
+
+    select,
+    input {
+        height: 65px;
+        font-size: 18px;
+        padding: 0 18px;
+    }
+
+    .field-title,
+    .section-title {
+        font-size: 20px;
+    }
+
+    .description,
+    .verify-text {
+        font-size: 19px;
+    }
+
+    .helper,
+    .error-message {
+        font-size: 15px;
+    }
+
+    .bottom-actions {
+        padding: 18px;
+        gap: 15px;
+    }
+
+    .bottom-actions button {
+        font-size: 16px;
+    }
+
+    .save {
+        padding: 17px 25px;
+    }
+
+    .account-warning {
+        padding: 20px;
+        font-size: 17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="top-browser">
+    <div class="status-bar">
+        <span>7:58</span>
+        <span>▮ ▴ WiFi ▰ 18%</span>
+    </div>
+
+    <div class="browser-title">
+        <span style="font-size:28px">×</span>
+        <span style="font-size:28px">⌄</span>
+        <div>
+            <div class="site-name">Account details</div>
+            <small>play.google.com</small>
+        </div>
+        <div class="browser-icons">♧　♧　⋮</div>
+    </div>
+</header>
+
+<div class="app-header">
+    <span class="menu-icon">☰</span>
+    <span>Account details</span>
+    <div class="notification">♧</div>
+</div>
+
+<main>
+    <select aria-label="Account range">
+        <option>1–10</option>
+        <option>11–20</option>
+        <option>21–30</option>
+    </select>
+
+    <p class="field-title">Organisation phone number</p>
+
+    <p class="description">
+        The main phone number associated with your organisation.
+        This is not shown publicly.
+    </p>
+
+    <input
+        type="tel"
+        id="phone"
+        value="+923277896201"
+        aria-label="Organisation phone number"
+    >
+
+    <span class="helper">
+        Include the + symbol, country code and area code
+    </span>
+
+    <p class="field-title">Organisation website</p>
+
+    <p class="description">
+        The URL of your organisation's main website. This isn't
+        shown publicly.
+    </p>
+
+    <input
+        type="url"
+        id="website"
+        class="error-input"
+        placeholder="Enter a URL starting with http:// or https://"
+        aria-label="Organisation website"
+    >
+
+    <div class="error-message" id="error">
+        Enter a valid URL starting with http:// or https://
+    </div>
+
+    <p class="verify-text">
+        Prove that your organisation owns this website by sending a
+        verification request to the registered owner in Google
+        Search Console. You must register ownership of this website
+        in Search Console before you can verify it.
+    </p>
+
+    <div class="actions">
+        <button id="verify" disabled>Send verification request</button>
+        <button class="learn-more"
+            onclick="window.open('https://support.google.com/googleplay/android-developer/', '_blank')">
+            Learn more
+        </button>
+    </div>
+
+    <p class="section-title">About your apps</p>
+</main>
+
+<div class="bottom-actions">
+    <button class="discard" onclick="location.reload()">
+        Discard changes
+    </button>
+
+    <button class="save" onclick="saveDetails()">
+        Save changes
+    </button>
+</div>
+
+<div class="account-warning">
+    To publish apps, finish setting up your developer account
+    <a href="https://play.google.com/console/">View details</a>
+</div>
+
+<script>
+const website = document.getElementById("website");
+const error = document.getElementById("error");
+const verify = document.getElementById("verify");
+
+function validateWebsite() {
+    const value = website.value.trim();
+
+    try {
+        const url = new URL(value);
+        const valid =
+            (url.protocol === "http:" || url.protocol === "https:") &&
+            url.hostname.includes(".");
+
+        error.style.display = valid ? "none" : "block";
+        website.classList.toggle("error-input", !valid);
+        verify.disabled = !valid;
+    } catch {
+        error.style.display = "block";
+        website.classList.add("error-input");
+        verify.disabled = true;
+    }
+}
+
+website.addEventListener("input", validateWebsite);
+
+verify.addEventListener("click", () => {
+    alert("Website format is valid. Ownership verification must be completed in Google Search Console.");
+});
+
+function saveDetails() {
+    validateWebsite();
+
+    if (!website.value.trim() || verify.disabled) {
+        alert("Please enter a valid organisation website URL.");
+        website.focus();
+        return;
+    }
+
+    alert("Demo only: connect this form to your backend to save changes.");
+}
+</script>
+
+</body>
+</html>
